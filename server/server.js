@@ -2,10 +2,12 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
 
+const databaseManager = require('./dao/database-manager')
+const logger = require('./utils/utils').logger;
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+
 
 const app = express();
 
@@ -15,7 +17,6 @@ const port = 8080
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -40,8 +41,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+
 app.listen(port, ()=>{
-  console.log(`Server running on port: ${port}`)
+  databaseManager.connectToDB()
+  logger(`Server running on port: ${port}`)
 })
 
 module.exports = app;
