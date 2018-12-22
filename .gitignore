@@ -1,1 +1,58 @@
-node_modules/
+Server/node_modules/
+
+# OSX
+#
+Mobile/.DS_Store
+
+# Xcode
+#
+Mobile/build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+Mobile/xcuserdata
+*.xccheckout
+*.moved-aside
+Mobile/DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+Mobile/project.xcworkspace
+
+# Android/IntelliJ
+#
+Mobile/build/
+Mobile/.idea
+Mobile/.gradle
+Mobile/local.properties
+*.iml
+
+# node.js
+#
+Mobile/node_modules/
+Mobile/npm-debug.log
+Mobile/yarn-error.log
+
+# BUCK
+Mobile/buck-out/
+\.buckd/
+*.keystore
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+*/Mobile/fastlane/report.xml
+*/Mobile/fastlane/Preview.html
+*/Mobile/fastlane/screenshots
+
+# Bundle artifact
+*.jsbundle
